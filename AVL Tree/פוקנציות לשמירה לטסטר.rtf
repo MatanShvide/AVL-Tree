@@ -1,105 +1,59 @@
-{\rtf1\fbidis\ansi\ansicpg1255\deff0\nouicompat\deflang1037{\fonttbl{\f0\fnil\fcharset177 Calibri;}{\f1\fnil\fcharset0 Consolas;}{\f2\fnil Consolas;}{\f3\fnil\fcharset177 Arial;}{\f4\fnil\fcharset0 Arial;}{\f5\fnil\fcharset0 Calibri;}}
-{\colortbl ;\red0\green0\blue0;\red127\green0\blue85;\red106\green62\blue62;\red63\green127\blue95;\red0\green0\blue192;\red42\green0\blue255;}
-{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
-\pard\rtlpar\sa200\sl276\slmult1\qr\b\f0\rtlch\fs22\'f4\'e5\'f0\'f7\'f6\'e9\'e9\'fa \'e1\'e3\'e9\'f7\'e4 \'ec\'f9\'e0\'ec\'e4 1 \'f2\'e9\'e5\'f0\'e9:\par
-\par
+הנחיות לבודק שפיות:
 
-\pard\rtlpar\sa200\sl276\slmult1\cf1\b0\f1\ltrch\fs24\lang1033\tab\cf2\b\f2\lang1037 public\cf1\b0  \cf2\b static\cf1\b0  \cf2\b void\cf1\b0  main(String[] \cf3 args\cf1 ) \{\cf0\par
-\cf1\tab\tab\cf4 /*AVLTree tree = new AVLTree();\cf0\par
-\cf4\tab\tab AVLTree randomTree = new AVLTree();\cf0\par
-\cf4\tab\tab\ul int\ulnone  sum = 0;\cf0\par
-\cf4\tab\tab Random generator = new Random();\cf0\par
-\cf4\tab\tab\ul int\ulnone  n = \cf0\par
-\cf4\tab\tab\tab\tab 2000;\cf0\par
-\cf4\tab\tab for (\ul int\ulnone  i=n; i>0; i--) \{\cf0\par
-\cf4\tab\tab\tab sum += tree.searchFromMax(i);\cf0\par
-\cf4\tab\tab\tab tree.insert(i, "String of" + i);\cf0\par
-\cf4\tab\tab\}\cf0\par
-\cf4\tab\tab System.out.println(sum);\cf0\par
-\cf4\tab\tab sum=0;\cf0\par
-\cf4\tab\tab\ul int\ulnone  [] bank4= new \ul int\ulnone [n];\cf0\par
-\cf4\tab\tab\ul int\ulnone [] orderOfInsertions4 = new \ul int\ulnone [n];\cf0\par
-\cf4\tab\tab for (\ul int\ulnone  i=0; i<n; i++) \{ //create first tree\cf0\par
-\cf4\tab\tab\tab\ul int\ulnone  key = tester.getRandomInt3(generator, bank4); //get random number under 500\cf0\par
-\cf4\tab\tab\tab String info = "String of" + key;\cf0\par
-\cf4\tab\tab\tab sum += randomTree.searchFromMax(key);\cf0\par
-\cf4\tab\tab\tab randomTree.insert(key, info);\cf0\par
-\cf4\tab\tab\tab orderOfInsertions4[i] = key; //keep order of insertions for deeper checking if necessary\cf0\par
-\cf4\tab\tab\}\cf0\par
-\cf4\tab\tab System.out.println(sum);\cf0\par
-\cf4\tab\tab //System.out.println(Arrays.toString(orderOfInsertions4));\cf0\par
-\cf4\tab\tab\ul int\ulnone  subCnt = 0;\cf0\par
-\cf4\tab\tab for (\ul int\ulnone  i=0; i<n; i++) \{\cf0\par
-\cf4\tab\tab\tab for (\ul int\ulnone  j=0; j<n; j++) \{\cf0\par
-\cf4\tab\tab\tab\tab if ((i>j)&&(orderOfInsertions4[i]<orderOfInsertions4[j])) \{\cf0\par
-\cf4\tab\tab\tab\tab\tab subCnt+=1;\cf0\par
-\cf4\tab\tab\tab\tab\}\cf0\par
-\cf4\tab\tab\tab\}\cf0\par
-\cf4\tab\tab\}\cf0\par
-\cf4\tab\tab System.out.println(subCnt);\cf0\par
-\cf4\tab\}\cf0\par
-\cf4\tab\cf0\par
-\cf4\tab public static \ul int\ulnone  getRandomInt3(Random randomGen, \ul int\ulnone [] bank4) \{ //only under 500\cf0\par
-\cf4\tab\tab\ul int\ulnone  key = randomGen.nextInt(bank4.length);\cf0\par
-\cf4\tab\tab while (bank4[key]==1) \{\cf0\par
-\cf4\tab\tab\tab key = randomGen.nextInt(bank4.length);\tab\cf0\par
-\cf4\tab\}\cf0\par
-\cf4\tab\tab bank4[key]=1;\cf0\par
-\cf4\tab\tab return key;\cf0\par
-\cf4\tab\}\cf0\par
+חלק ראשון
+*הקוד מרכיב שני עצים בגודל אקראי בין 1-100 כאשר המפתחות של הראשון נמוכים מ500 והמפתחות של השני גבוהים ממנו. המפתחות נכנסים ללא חזרות.
+*הקוד מרכיב את העץ ומדפיס את סדר ההכנסות כדי שתוכלו להרכיב בעצמכם אם תרצו לבדוק עץ ספציפי. בנוסף, הוא מדפיס את הסדר InOrder כדי שתוכלו לוודא שהכל נכנס\
+*עבור כל עץ הוא עובר על כל הצמתים InOrder ובודק BalanceFactor, קישוריות, תקינות דרגה ויחסי גודל עם הבנים שלו וההורה שלו. במידה ויש בעיית סדר הוא מפרד באיזה אינדקס InOrder התקלה, במידה ויש בעיית קישוריות הוא מפרט את המפתח ואת בניו, במידה ויש בעיית BF הוא מדווח מפתח,דרגה,בנים ודרגותיהם.
 
-\pard\rtlpar\sa200\sl276\slmult1\qr\cf4\}*/\par
-\par
-\par
-\par
-\par
-\par
-\par
-\b\f3\rtlch\'f4\'e5\'f0\'f7\'f6\'e9\'e9\'fa \'e1\'e3\'e9\'f7\'e4 \'ec\'e8\'f1\'e8\'f8:\f4\ltrch\lang1033\par
-\par
+חלק שני
+*הקוד יחבר בין שני העצים בעזרת המפתח 500 ויבצע את אותן הבדיקות שביצע קודם לכן, הפעם עבור העץ המחובר. כמו כן, יוודא שכל המפתחות נכנסו.
+חלק שלישי
+*נמחק 5 מפתחות קבועים מתוך מיקומם ברשימת הInOrder של העץ(אתם יכולים לשנות חלק זה על פי רצונכם, ייתכנו תקלות ריצה אם במקרה העץ שיצא לא תומך במספרי האינדקסים הקבועים שכתבתי) ומדפיס את המפתחות InOrder ומדווח על גודל העץ החדש ומבצע את אותן הבדיקות שביצע על העצים הקודמים.
+חלק רביעי
+*נפצל את העץ על פי האיבר ה12 ברשימת הInOrder (נבחר באקראיות, אתם יכולים לשנות את זה) ונבצע את אותן הבדיקות על שני העצים החדשים וידפיס אותם InOrder ויוודא שהגדלים תקינים.
 
-\pard\rtlpar\sa200\sl276\slmult1\cf1\b0\f1\tab\cf2\b\f2 public\cf1\b0  \cf2\b void\cf1\b0  print(AVLNode \cf3 node\cf1 , \cf2\b int\cf1\b0  \cf3 level\cf1 ) \{ \cf4 /////\ul aux\ulnone  tester \ul func\cf0\ulnone\par
-\cf1\tab\tab\cf2\b if\cf1\b0  (\cf3 node\cf1  == \cf2\b null\cf1\b0 ) \{\cf0\par
-\cf1\tab\tab\tab\cf2\b return\cf1\b0 ;\cf0\par
-\cf1\tab\tab\}\cf0\par
-\cf1\tab\tab\cf4 //System.out.println("Level: " + level + " , " + node.getKey() + " , " + node.getValue());\cf0\par
-\cf1\tab\tab\cf2\b if\cf1\b0  ((\cf3 node\cf1 .\cf5 key\cf1  != -1) && ((\cf3 node\cf1 .getBF() >= 2) || (\cf3 node\cf1 .getBF() <= -2))) \{\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "node"\cf1  + \cf3 node\cf1 .\cf5 key\cf1  + \cf6 " is unbalanced. BF is "\cf1  + \cf3 node\cf1 .getBF() + \cf6 ". sons are "\cf0\par
-\cf1\tab\tab\tab\tab\tab + \cf3 node\cf1 .\cf5 left\cf1 .\cf5 key\cf1  + \cf6 " rank="\cf1  + \cf3 node\cf1 .\cf5 left\cf1 .\cf5 rank\cf1  + \cf6 " "\cf1  + \cf3 node\cf1 .\cf5 right\cf1 .\cf5 key\cf1  + \cf6 " rank="\cf1  + \cf3 node\cf1 .\cf5 right\cf1 .\cf5 rank\cf0\par
-\cf1\tab\tab\tab\tab\tab + \cf6 "*********"\cf1 );\cf0\par
-\cf1\tab\tab\} \cf2\b else\cf1\b0  \cf2\b if\cf1\b0  (((\cf3 node\cf1 .\cf5 right\cf1  != \cf2\b null\cf1\b0 ) && (\cf3 node\cf1 .\cf5 right\cf1 .\cf5 key\cf1  < \cf3 node\cf1 .\cf5 key\cf1 ) && (\cf3 node\cf1 .\cf5 right\cf1 .\cf5 key\cf1  != -1))\cf0\par
-\cf1\tab\tab\tab\tab || ((\cf3 node\cf1 .\cf5 left\cf1  != \cf2\b null\cf1\b0 ) && (\cf3 node\cf1 .\cf5 left\cf1 .\cf5 key\cf1  > \cf3 node\cf1 .\cf5 key\cf1 ) && (\cf3 node\cf1 .\cf5 left\cf1 .\cf5 key\cf1  != -1))) \{\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "node"\cf1  + \cf3 node\cf1 .\cf5 key\cf1  + \cf6 "is not in order********"\cf1 );\cf0\par
-\cf1\tab\tab\} \cf2\b else\cf1\b0  \cf2\b if\cf1\b0  ((\cf3 node\cf1 .\cf5 rank\cf1  == -1) && ((\cf3 node\cf1 .\cf5 right\cf1  != \cf2\b null\cf1\b0 ) || (\cf3 node\cf1 .\cf5 left\cf1  != \cf2\b null\cf1\b0 ))) \{\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "virtual son of"\cf1  + \cf3 node\cf1 .\cf5 parent\cf1 .\cf5 key\cf1  + \cf6 " has a son*********"\cf1 );\cf0\par
-\cf1\tab\tab\} \cf2\b else\cf1\b0  \cf2\b if\cf1\b0  ((\cf3 node\cf1 .\cf5 right\cf1  != \cf2\b null\cf1\b0 ) && (\cf3 node\cf1 .\cf5 right\cf1 .\cf5 parent\cf1  != \cf3 node\cf1 )\cf0\par
-\cf1\tab\tab\tab\tab || ((\cf3 node\cf1 .\cf5 left\cf1  != \cf2\b null\cf1\b0 ) && (\cf3 node\cf1 .\cf5 left\cf1 .\cf5 parent\cf1  != \cf3 node\cf1 ))) \{\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "one of"\cf1  + \cf3 node\cf1 .\cf5 key\cf1  + \cf6 "sons is not connected to him*********"\cf1 );\cf0\par
-\cf1\tab\tab\} \cf2\b else\cf1\b0  \cf2\b if\cf1\b0  ((\cf3 node\cf1 .\cf5 parent\cf1  != \cf2\b null\cf1\b0 ) && (\cf3 node\cf1 .\cf5 parent\cf1 .\cf5 right\cf1  != \cf3 node\cf1 ) && (\cf3 node\cf1 .\cf5 parent\cf1 .\cf5 left\cf1  != \cf3 node\cf1 )) \{\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "node"\cf1  + \cf3 node\cf1 .\cf5 key\cf1  + \cf6 " is not connected to parent********"\cf1 );\cf0\par
-\cf1\tab\tab\} \cf2\b else\cf1\b0  \cf2\b if\cf1\b0  ((\cf3 node\cf1 .\cf5 rank\cf1  != -1) && (\cf3 node\cf1 .\cf5 rank\cf1  != (Math.\i max\i0 (\cf3 node\cf1 .\cf5 left\cf1 .\cf5 rank\cf1 , \cf3 node\cf1 .\cf5 right\cf1 .\cf5 rank\cf1 ) + 1))) \{\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "node"\cf1  + \cf3 node\cf1 .\cf5 key\cf1  + \cf6 " rank is not adjusted, his rank is"\cf1  + \cf3 node\cf1 .\cf5 rank\cf1 );\cf0\par
-\cf1\tab\tab\tab System.\cf5\b\i out\cf1\b0\i0 .println(\cf6 "sons are"\cf1  + \cf3 node\cf1 .\cf5 left\cf1 .\cf5 key\cf1  + \cf6 " rank "\cf1  + \cf3 node\cf1 .\cf5 left\cf1 .\cf5 rank\cf1  + \cf6 " and "\cf1  + \cf3 node\cf1 .\cf5 right\cf1 .\cf5 key\cf0\par
-\cf1\tab\tab\tab\tab\tab + \cf6 " rank "\cf1  + \cf3 node\cf1 .\cf5 right\cf1 .\cf5 rank\cf1 );\cf0\par
-\cf1\tab\tab\}\cf0\par
-\par
-\cf1\tab\tab\cf2\b if\cf1\b0  (\cf3 node\cf1 .getLeft() != \cf2\b null\cf1\b0 )\cf0\par
-\cf1\tab\tab\tab print((AVLNode) (\cf3 node\cf1 .getLeft()), \cf3 level\cf1  + 1);\cf0\par
-\cf1\tab\tab\cf2\b if\cf1\b0  (\cf3 node\cf1 .getRight() != \cf2\b null\cf1\b0 )\cf0\par
-\cf1\tab\tab\tab print((AVLNode) \cf3 node\cf1 .getRight(), \cf3 level\cf1  + 1);\cf0\par
 
-\pard\rtlpar\sa200\sl276\slmult1\qr\cf1\tab\}\par
-\par
-\par
-\b\f3\rtlch\lang1037\'f4\'e5\'f0\'f7\'f6\'e9\'e9\'fa \'e7\'e5\'e1\'e4 \'e1\f1\ltrch\lang1033 AVLNODE\f3\rtlch\lang1037  \'ec\'ee\'f2\'ef \'f8\'e9\'f6\'fa \'e4\'e8\'f1\'e8\'f8:\par
-\par
+הערות חשובות
+*בקוד ישנם חלקים שלמים שנמצאים בהערות \\. הסיבה לכך היא שלעתים קשה לבדוק את הפקודות כשכל פעם מקבלים עץ אחר. לכן ישנן פקודות מוקפאות לtree3 שנועד לבנות עץ קבוע ואפשר להשתמש בו לטובת כל הבדיקות ולהשתיק את השאר. יש לו משתנה גודל, פקודת אתחול, רשימת הכנסות,רשימת bank למניעת הכנסות חוזרות, רשימת הכנסות InOrder,  לולאת for של הכנסות ולבסוף קטע שלם של בדיקות עבורו. אחר כך, ניתן להקפיא את העצים האחרים ולבצע פקודת split ולשנות את המשתנים באגף ההוא כך שהפונקציה תפעל על העץ הרלוונטי. השתדלתי שזה יהיה כמה שיותר מובן
+*הקוד לא בודק את כל הפונקציות שלכן. הוא בודק את תקינות העץ בלבד ולא אם החזרתם את מספר הפעולות הנכון וכו. חוץ מזה חשוב לי להדגיש שאני סתם סטודנט בינוני ולכן אין שום ערובה לשום דבר. הקוד הזה עזר לי מאד ואני מקווה שיעזור גם לכם
+*יכולות להיות כל מיני תקלות ריצה שקשורות באינדקסים וגדלי עצים, בעיקר באגף הsplit והdelete שם בחרתי אינדקסים קבועים ללא קשר לעץ. שימו לב לזה ושנו בהתאם.
+*ישנו פלט מאד ברור עבור שגיאות במבנה העץ, כל תקלות ריצה קשורות לjava ולא לקוד עצמו. אם יש תקלות בפונקציות ברמת הריצה, הקוד פשוט ירוץ ולא יידע להגיד מה הבעיה או אפילו לרמוז. זה רק בודק תקינות מבנה של עץ.
+*ישנן שתי פונקציות עזר שיש לשלב במחלקות שלכם:
+פונקציית הוצאת BalanceFactor, יש להניח אותם אצלכם בAVLNode:
+private int getBF() {
+			if (this.rank == -1) {
+				return -3;
+			}
+			return this.left.rank - this.right.rank;
+		}
+פונקציית הבדיקה, יש להניח אותה אצלכם בAVLTree:
+	public void print(AVLNode node, int level) { /////aux tester func
+		if (node == null) {
+			return;
+		}
+		//System.out.println("Level: " + level + " , " + node.getKey() + " , " + node.getValue());
+		if ((node.key != -1) && ((node.getBF() >= 2) || (node.getBF() <= -2))) {
+			System.out.println("node" + node.key + " is unbalanced. BF is " + node.getBF() + ". sons are "
+					+ node.left.key + " rank=" + node.left.rank + " " + node.right.key + " rank=" + node.right.rank
+					+ "*********");
+		} else if (((node.right != null) && (node.right.key < node.key) && (node.right.key != -1))
+				|| ((node.left != null) && (node.left.key > node.key) && (node.left.key != -1))) {
+			System.out.println("node" + node.key + "is not in order********");
+		} else if ((node.rank == -1) && ((node.right != null) || (node.left != null))) {
+			System.out.println("virtual son of" + node.parent.key + " has a son*********");
+		} else if ((node.right != null) && (node.right.parent != node)
+				|| ((node.left != null) && (node.left.parent != node))) {
+			System.out.println("one of" + node.key + "sons is not connected to him*********");
+		} else if ((node.parent != null) && (node.parent.right != node) && (node.parent.left != node)) {
+			System.out.println("node" + node.key + " is not connected to parent********");
+		} else if ((node.rank != -1) && (node.rank != (Math.max(node.left.rank, node.right.rank) + 1))) {
+			System.out.println("node" + node.key + " rank is not adjusted, his rank is" + node.rank);
+			System.out.println("sons are" + node.left.key + " rank " + node.left.rank + " and " + node.right.key
+					+ " rank " + node.right.rank);
+		}
 
-\pard\rtlpar\sa200\sl276\slmult1\b0\f1\ltrch\lang1033\tab\tab\cf2\b\f2\lang1037 private\cf1\b0  \cf2\b int\cf1\b0  getBF() \{\cf0\par
-\cf1\tab\tab\tab\cf2\b if\cf1\b0  (\cf2\b this\cf1\b0 .\cf5 rank\cf1  == -1) \{\cf0\par
-\cf1\tab\tab\tab\tab\cf2\b return\cf1\b0  -3;\cf0\par
-\cf1\tab\tab\tab\}\cf0\par
-\cf1\tab\tab\tab\cf2\b return\cf1\b0  \cf2\b this\cf1\b0 .\cf5 left\cf1 .\cf5 rank\cf1  - \cf2\b this\cf1\b0 .\cf5 right\cf1 .\cf5 rank\cf1 ;\cf0\par
-
-\pard\rtlpar\sa200\sl276\slmult1\qr\cf1\tab\tab\}\cf0\f5\fs22\lang9\par
-}
- 
+		if (node.getLeft() != null)
+			print((AVLNode) (node.getLeft()), level + 1);
+		if (node.getRight() != null)
+			print((AVLNode) node.getRight(), level + 1);
+	}
